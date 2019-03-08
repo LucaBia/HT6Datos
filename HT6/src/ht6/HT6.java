@@ -64,15 +64,6 @@ public class HT6 {
         totalCards = factory.ChooseMap(mapType);
         
         //Se realiza e split para separar la info que proporciona la carta (nombre|tipo)
-        /*for (int i=0; i<allCards.size(); i++) {
-                //System.out.println(i);
-                String j = allCards.get(i);
-                //String[] information = j.split("|");
-                String[] information = j.split("[|]");
-                cardName.add(information[0]);
-                totalCards.put(information[0], information[1]);
-                //System.out.println(totalCards);
-            }*/
         for (String i: allCards) {
 	                //System.out.println(i);
 	                String[] information = i.split("[|]");
@@ -104,6 +95,50 @@ public class HT6 {
                 }else{
                     System.out.println("La carta que ingresaste no esta dentro del mazo general.");
                 }
+                break;
+                
+            case 2:
+                String name2;
+                System.out.println("Ingrese el nombre de la carta para saber de que tipo es: ");
+                name2 = read.next();
+                System.out.println("La carta '" + name2 + "' es de tipo:" + totalCards.get(name2));
+                break;
+                
+            case 3:
+                break;
+            case 4:
+                break;
+            case 5:
+                System.out.println("Las cartas disponibles en TODO el mazo son: "
+                        + "\n"+totalCards);
+                break;
+            case 6:
+                //Variables para poder imprimir y ser editadas luego
+                String monster = " ";
+                String trap = " "; 
+                String spell = " ";
+                
+                //ciclo for que busca el tipo de carta y las separa
+                for (int i = 0; i < cardName.size(); i++){
+                    String nameAll = cardName.get(i);
+                    String tipo = totalCards.get(nameAll);
+                    if (tipo.equals("Monstruo")){
+                        monster = monster + "\n"+ nameAll + " (Monstruo)";
+                    }else if (tipo.equals("Trampa")){
+                        trap = trap + "\n"+ nameAll + " (Trampa)";
+                    }else if (tipo.equals("Hechizo")){
+                        spell = spell + "\n"+ nameAll + " (Hechizo)";
+                    }
+                }
+      
+                
+                System.out.println(monster + trap + spell);
+
+                
+                
+             
+                
+                
         }
     }
     
