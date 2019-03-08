@@ -109,14 +109,7 @@ public class HT6 {
             case 4:
                 break;
             case 5:
-                /*System.out.println("Las cartas disponibles en TODO el mazo son: "
-                        + "\n"+totalCards);*/
-                
-                //totalCards.forEach((i,j) -> System.out.println( i + "\nTipo:  "+ j));
-                for (int h = 0; h < totalCards.size(); h++){
-                    System.out.println(h);
-                }
-                
+                //Ciclo for que recorre todas las cartas para imprimirlas
                 for (String ab : allCards) {
                     System.out.println(ab);
                 }
