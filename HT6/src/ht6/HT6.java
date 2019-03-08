@@ -109,8 +109,18 @@ public class HT6 {
             case 4:
                 break;
             case 5:
-                System.out.println("Las cartas disponibles en TODO el mazo son: "
-                        + "\n"+totalCards);
+                /*System.out.println("Las cartas disponibles en TODO el mazo son: "
+                        + "\n"+totalCards);*/
+                
+                //totalCards.forEach((i,j) -> System.out.println( i + "\nTipo:  "+ j));
+                for (int h = 0; h < totalCards.size(); h++){
+                    System.out.println(h);
+                }
+                
+                for (String ab : allCards) {
+                    System.out.println(ab);
+                }
+                
                 break;
             case 6:
                 //Variables para poder imprimir y ser editadas luego
@@ -123,22 +133,14 @@ public class HT6 {
                     String nameAll = cardName.get(i);
                     String tipo = totalCards.get(nameAll);
                     if (tipo.equals("Monstruo")){
-                        monster = monster + "\n"+ nameAll + " (Monstruo)";
+                        monster = monster + "\n" + nameAll + " (Monstruo)";
                     }else if (tipo.equals("Trampa")){
-                        trap = trap + "\n"+ nameAll + " (Trampa)";
+                        trap = trap + "\n" + nameAll + " (Trampa)";
                     }else if (tipo.equals("Hechizo")){
-                        spell = spell + "\n"+ nameAll + " (Hechizo)";
+                        spell = spell + "\n" + nameAll + " (Hechizo)";
                     }
                 }
-      
-                
                 System.out.println(monster + trap + spell);
-
-                
-                
-             
-                
-                
         }
     }
     
