@@ -24,11 +24,12 @@ public class MapFactory {
         //si selecciona la segunda opcion entonces sera TreeMap
         }else if (option == 2){
             return new TreeMap();
-        //si selecciona la tercer, o mas bien, la opcion por default, entonces sera LinkedHashMap
-        }else{
+        //si selecciona la tercera opcion entonces sera LinkedHashMap
+        }else if (option == 3){
             return new LinkedHashMap();
         }
-
+        //Si no selecciona ninguna opcion no mostrar nada
+        return null;
     }
     
 }
