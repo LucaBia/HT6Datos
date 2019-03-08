@@ -93,7 +93,8 @@ public class HT6 {
                 case 1:
                     String name;
                     System.out.println("Ingrese el nombre de la carta que desea agregar a su coleccion: ");
-                    name = read.next();
+                    read.nextLine();
+                    name = read.nextLine();
                     if (totalCards.containsKey(name) == true){
                         characters.add(name);
                         String newCard = totalCards.get(name);
@@ -109,7 +110,8 @@ public class HT6 {
                 case 2:
                     String name2;
                     System.out.println("Ingrese el nombre de la carta para saber de que tipo es: ");
-                    name2 = read.next();
+                    read.nextLine();
+                    name2 = read.nextLine();
                     System.out.println("La carta '" + name2 + "' es de tipo:" + totalCards.get(name2));
                     break;
 
