@@ -26,6 +26,7 @@ public class HT6 {
      */
     public static void main(String[] args) {
         int mapType;
+        int optionMenu;
         Scanner read = new Scanner(System.in);
         //Mazo de cartas
          Map<String, String> cards;
@@ -34,6 +35,7 @@ public class HT6 {
          MapFactory factory = new MapFactory();
          
          ArrayList<String> cardName =new ArrayList();
+         ArrayList<String> characters = new ArrayList();
         
         //Bloque de cofigo que se encarga de la lectura del archivo de texto que contiene las cartas
         ArrayList<String> allCards = new ArrayList();
@@ -62,12 +64,47 @@ public class HT6 {
         totalCards = factory.ChooseMap(mapType);
         
         //Se realiza e split para separar la info que proporciona la carta (nombre|tipo)
-        for (String i: allCards) {
+        /*for (int i=0; i<allCards.size(); i++) {
                 //System.out.println(i);
-                String[] information = i.split("|");
+                String j = allCards.get(i);
+                //String[] information = j.split("|");
+                String[] information = j.split("[|]");
                 cardName.add(information[0]);
                 totalCards.put(information[0], information[1]);
-            }
+                //System.out.println(totalCards);
+            }*/
+        for (String i: allCards) {
+	                //System.out.println(i);
+	                String[] information = i.split("[|]");
+	                cardName.add(information[0]);
+	                totalCards.put(information[0], information[1]);
+                        //System.out.println(totalCards);
+	    }
+        
+        System.out.println("Seleccione la operación que desea realizar: "
+                + "\n1. Agregar una carta a tu coleccion"
+                + "\n2. Mostrar el tipo de una carta"
+                + "\n3. Mostrar informacion de las cartas de tu mazo"
+                + "\n4. Mostrar informacion de las cartas de tu mazo ordenadas por tipo"
+                + "\n5. Mostrar informacion de todas las cartas existentes"
+                + "\n6. Mostrar informacion de todas las cartas existentes ordenadas por tipo");
+        optionMenu = read.nextInt();
+        
+        switch(optionMenu){
+            case 1:
+                String name;
+                System.out.println("Ingrese el nombre de la carta que desea agregar a su coleccion: ");
+                name = read.next();
+                if (totalCards.containsKey(name) == true){
+                    characters.add(name);
+                    String newCard = totalCards.get(name);
+                    totalCards.remove(name);
+                    cards.put(name, newCard);
+                    System.out.println("La carta '" + name + "' se ha agregado a tu mazo.");
+                }else{
+                    System.out.println("La carta que ingresaste no esta dentro del mazo general.");
+                }
+        }
     }
     
 }
