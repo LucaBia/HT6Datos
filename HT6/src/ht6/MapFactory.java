@@ -17,7 +17,7 @@ import java.util.TreeMap;
 public class MapFactory {
     //Metodo que valida el tipo de mapa a implementar
     //Patron de disenio factory
-    public Map ChooseMap(int option){
+    public static Map ChooseMap(int option){
         //si selecciona la primera opcion entonces sera HashMap
         if (option == 1){
             return new HashMap();
