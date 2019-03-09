@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ht6;
+//package ht6;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -18,6 +18,10 @@ import java.util.stream.Stream;
 /**
  *
  * @author gianlucariverabiagioni / isaortiz
+ * Isabel Ortiz - 18176
+ * Gian Luca Rivera - 18049
+ * seccion 10
+ * Programa que implementa los tres tipos de map. simulado con mazo de cartas.
  */
 public class HT6 {
 
@@ -36,12 +40,12 @@ public class HT6 {
         
          MapFactory factory = new MapFactory();
          
-         ArrayList<String> cardName = new ArrayList();
-         ArrayList<String> characters = new ArrayList();
-         ArrayList<String> cardNamePlayer = new ArrayList();
+         ArrayList<String> cardName = new ArrayList<String>();
+         ArrayList<String> characters = new ArrayList<String>();
+         ArrayList<String> cardNamePlayer = new ArrayList<String>();
         
         //Bloque de cofigo que se encarga de la lectura del archivo de texto que contiene las cartas
-        ArrayList<String> allCards = new ArrayList();
+        ArrayList<String> allCards = new ArrayList<String>();
         try{
             Stream<String> lines = Files.lines(Paths.get("cards_desc.txt"),StandardCharsets.UTF_8);
             lines.forEach(a -> allCards.add(a));
