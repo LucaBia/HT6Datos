@@ -4,6 +4,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.TreeMap;
 
+//package ht6;
 /**
  * Clase Map Factory
  * @author Gian Luca Rivera Biagioni
